@@ -45,6 +45,7 @@ Minimal config:
 ```
 
 Result:
+
 ![Alt text](https://cdn.rawgit.com/RazrFalcon/barh/master/examples/minimal.svg)
 
 Complex config:
@@ -80,13 +81,17 @@ Complex config:
 ```
 
 Result:
+
 ![Alt text](https://cdn.rawgit.com/RazrFalcon/barh/master/examples/complex.svg)
 
 and with debug info:
+
 ![Alt text](https://cdn.rawgit.com/RazrFalcon/barh/master/examples/complex_with_debug.svg)
 
 and with Noto font:
+
 ![Alt text](https://cdn.rawgit.com/RazrFalcon/barh/master/examples/complex_noto.svg)
+
 Here we can see that bbox detection is very poor. Arial font is the best font for now.
 
 ### Limitations
