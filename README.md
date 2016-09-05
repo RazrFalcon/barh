@@ -119,3 +119,7 @@ V0.1
  - [ ] Custom ticks count.
  - [ ] Custom stretch value.
  - [ ] Support many values per item.
+
+### License
+
+*barh* is licensed under the [GPL-2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html).
