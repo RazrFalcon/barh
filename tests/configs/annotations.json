@@ -1,0 +1,18 @@
+{
+    "title": "Annotation outside the bar",
+    "items_font": {
+        "family": "Arial",
+        "size": 12
+    },
+    "debug": true,
+    "items": [
+        {
+            "name": "item 1",
+            "value": 2
+        },
+        {
+            "name": "item 2",
+            "value": 5000
+        }
+    ]
+}

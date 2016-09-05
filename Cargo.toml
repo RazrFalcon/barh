@@ -1,0 +1,15 @@
+[package]
+name = "barh"
+version = "0.0.1"
+authors = ["Evgeniy Reizner <razrfalcon@gmail.com>"]
+keywords = ["charts", "graph", "bar", "generator", "svg"]
+license = "GPL-2.0"
+description = "A simple horizontal bar chart generator."
+
+[dependencies]
+svgdom = { git = "https://github.com/RazrFalcon/libsvgdom.git" }
+serde_json = "0.8"
+rusttype = "0.2.0"
+
+[lib]
+doctest = false

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated with https://github.com/RazrFalcon/barh -->
+<svg height="141" shape-rendering="crispEdges" width="517" xmlns="http://www.w3.org/2000/svg">
+    <text font-family="Arial" font-size="16" x="6" y="38">
+        Item 1
+    </text>
+    <text font-family="Arial" font-size="16" x="4" y="71">
+        Item 2
+    </text>
+    <text font-family="Arial" font-size="16" x="4" y="104">
+        Item 3
+    </text>
+    <rect fill="#ccc" height="110" width="1" x="52" y="10"/>
+    <text fill="#000" font-family="Arial" font-size="16" x="48" y="134">
+        0
+    </text>
+    <rect fill="#ccc" height="110" width="1" x="52" y="10"/>
+    <text fill="#000" font-family="Arial" font-size="16" x="48" y="134">
+        0
+    </text>
+    <rect fill="#ccc" height="110" width="1" x="164" y="10"/>
+    <text fill="#000" font-family="Arial" font-size="16" x="156" y="134">
+        25
+    </text>
+    <rect fill="#ccc" height="110" width="1" x="277" y="10"/>
+    <text fill="#000" font-family="Arial" font-size="16" x="269" y="134">
+        50
+    </text>
+    <rect fill="#ccc" height="110" width="1" x="390" y="10"/>
+    <text fill="#000" font-family="Arial" font-size="16" x="382" y="134">
+        75
+    </text>
+    <rect fill="#ccc" height="110" width="1" x="503" y="10"/>
+    <text fill="#000" font-family="Arial" font-size="16" x="490" y="134">
+        100
+    </text>
+    <rect fill="#3260cd" height="22" width="90" x="52" y="21"/>
+    <text fill="#fff" font-family="Arial" font-size="16" x="121" y="38">
+        20
+    </text>
+    <rect fill="#3260cd" height="22" width="225" x="52" y="54"/>
+    <text fill="#fff" font-family="Arial" font-size="16" x="256" y="71">
+        50
+    </text>
+    <rect fill="#3260cd" height="22" width="360" x="52" y="87"/>
+    <text fill="#fff" font-family="Arial" font-size="16" x="391" y="104">
+        80
+    </text>
+    <rect fill="#333" height="110" width="1" x="52" y="10"/>
+</svg>

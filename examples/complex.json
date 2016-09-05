@@ -1,0 +1,28 @@
+{
+    "title": "Complex example",
+    "items_font": {
+        "family": "Arial",
+        "size": 11
+    },
+    "hor_axis": {
+        "title": "Ratio",
+        "width": 500,
+        "max_value": 100,
+        "suffix": "%"
+    },
+    "items": [
+        {
+            "name": "Item 1",
+            "value": 14.4
+        },
+        {
+            "name": "Item 2",
+            "value": 55.5,
+            "color": "#e34234"
+        },
+        {
+            "name": "Item 3",
+            "value": 89.1
+        }
+    ]
+}

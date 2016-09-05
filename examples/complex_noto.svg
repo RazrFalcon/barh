@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated with https://github.com/RazrFalcon/barh -->
+<svg height="181" shape-rendering="crispEdges" width="544" xmlns="http://www.w3.org/2000/svg">
+    <text font-family="Noto Sans" font-size="16" font-weight="bold" x="51" y="16">
+        Complex example
+    </text>
+    <rect fill="none" height="20" stroke="green" width="110" x="51" y="0"/>
+    <text font-family="Noto Sans" font-size="16" x="5" y="54">
+        Item 1
+    </text>
+    <rect fill="none" height="20" stroke="red" width="38" x="5" y="38"/>
+    <text font-family="Noto Sans" font-size="16" x="4" y="89">
+        Item 2
+    </text>
+    <rect fill="none" height="20" stroke="red" width="39" x="4" y="73"/>
+    <text font-family="Noto Sans" font-size="16" x="4" y="122">
+        Item 3
+    </text>
+    <rect fill="none" height="20" stroke="red" width="39" x="4" y="106"/>
+    <rect fill="none" height="140" stroke="blue" width="43" x="0" y="20"/>
+    <rect fill="none" height="140" stroke="red" width="500" x="43" y="20"/>
+    <rect fill="none" height="110" stroke="green" width="476" x="51" y="30"/>
+    <rect fill="#ccc" height="110" width="1" x="51" y="30"/>
+    <text fill="#000" font-family="Noto Sans" font-size="16" x="43" y="154">
+        0%
+    </text>
+    <rect fill="none" height="11" stroke="red" width="17" x="43" y="143"/>
+    <rect fill="#ccc" height="110" width="1" x="51" y="30"/>
+    <text fill="#000" font-family="Noto Sans" font-size="16" x="43" y="154">
+        0%
+    </text>
+    <rect fill="none" height="11" stroke="red" width="17" x="43" y="143"/>
+    <rect fill="#ccc" height="110" width="1" x="170" y="30"/>
+    <text fill="#000" font-family="Noto Sans" font-size="16" x="158" y="154">
+        25%
+    </text>
+    <rect fill="none" height="11" stroke="red" width="25" x="158" y="143"/>
+    <rect fill="#ccc" height="110" width="1" x="289" y="30"/>
+    <text fill="#000" font-family="Noto Sans" font-size="16" x="277" y="154">
+        50%
+    </text>
+    <rect fill="none" height="11" stroke="red" width="25" x="277" y="143"/>
+    <rect fill="#ccc" height="110" width="1" x="408" y="30"/>
+    <text fill="#000" font-family="Noto Sans" font-size="16" x="396" y="154">
+        75%
+    </text>
+    <rect fill="none" height="11" stroke="red" width="25" x="396" y="143"/>
+    <rect fill="#ccc" height="110" width="1" x="527" y="30"/>
+    <text fill="#000" font-family="Noto Sans" font-size="16" x="511" y="154">
+        100%
+    </text>
+    <rect fill="none" height="11" stroke="red" width="33" x="511" y="143"/>
+    <rect fill="#3260cd" height="22" width="68" x="51" y="41"/>
+    <text fill="#fff" font-family="Noto Sans" font-size="16" x="89" y="54">
+        14.4
+    </text>
+    <rect fill="#e34234" height="22" width="264" x="51" y="74"/>
+    <text fill="#fff" font-family="Noto Sans" font-size="16" x="286" y="89">
+        55.5
+    </text>
+    <rect fill="#3260cd" height="22" width="424" x="51" y="107"/>
+    <text fill="#fff" font-family="Noto Sans" font-size="16" x="448" y="122">
+        89.1
+    </text>
+    <rect fill="#333" height="110" width="1" x="51" y="30"/>
+    <text font-family="Noto Sans" font-size="16" font-style="italic" x="277" y="176">
+        Ratio
+    </text>
+    <rect fill="none" height="20" stroke="green" width="500" x="43" y="160"/>
+</svg>

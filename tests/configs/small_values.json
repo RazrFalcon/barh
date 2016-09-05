@@ -1,0 +1,22 @@
+{
+    "title": "Small values",
+    "debug": true,
+    "items_font": {
+        "family": "Arial",
+        "size": 12
+    },
+    "items": [
+        {
+            "name": "item 1",
+            "value": 0.1
+        },
+        {
+            "name": "item 2",
+            "value": 0.4
+        },
+        {
+            "name": "item 3",
+            "value": 0.8
+        }
+    ]
+}
