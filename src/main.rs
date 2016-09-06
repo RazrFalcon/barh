@@ -84,13 +84,14 @@ fn main() {
 
     // init SVG DOM
     let doc = Document::new();
-    doc.append_new_node(NodeType::Declaration,
-        "version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"");
-    doc.append_new_node(NodeType::Comment,
-        " Generated with https://github.com/RazrFalcon/barh ");
+    doc.append(&doc.create_node(NodeType::Declaration,
+        "version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\""));
+    doc.append(&doc.create_node(NodeType::Comment,
+        " Generated with https://github.com/RazrFalcon/barh "));
 
     // create root node
-    let svg = doc.append_new_element(EId::Svg);
+    // let svg = doc.append_new_element(EId::Svg);
+    let svg = doc.append(&doc.create_element(EId::Svg));
     svg.set_attribute(AId::Xmlns, "http://www.w3.org/2000/svg");
     // useful option since we only draw objects with right angles
     // may be unsupported by user agent
@@ -109,4 +110,3 @@ fn main() {
     let mut out_file = main_try!(File::create(&args[2]));
     main_try!(out_file.write_all(&ouput_data));
 }
-

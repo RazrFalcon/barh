@@ -8,8 +8,9 @@ description = "A simple horizontal bar chart generator."
 
 [dependencies]
 svgdom = { git = "https://github.com/RazrFalcon/libsvgdom.git" }
+# svgdom = { path = "../svgdom" }
 serde_json = "0.8"
-rusttype = "0.2.0"
+rusttype = "0.2"
 
 [lib]
 doctest = false

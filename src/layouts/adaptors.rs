@@ -38,14 +38,14 @@ pub trait Adaptor {
 
 impl Adaptor for Node {
     fn append_rect(&self, x: u32, y: u32, w: u32, h: u32) -> Node {
-        let doc = self.document();
-        let rect = doc.create_element(EId::Rect);
+        let rect = self.document().create_element(EId::Rect);
+        self.append(&rect);
+
         rect.set_attribute(AId::X, x as f64);
         rect.set_attribute(AId::Y, y as f64);
         rect.set_attribute(AId::Width, w as f64);
         rect.set_attribute(AId::Height, h as f64);
         rect.set_attribute(AId::Fill, "none");
-        self.append(&rect);
         rect.clone()
     }
 
@@ -65,24 +65,24 @@ impl Adaptor for Node {
     }
 
     fn append_vline(&self, x: u32, y: u32, h: u32) -> Node {
-        let doc = self.document();
-        let rect = doc.create_element(EId::Rect);
+        let rect = self.document().create_element(EId::Rect);
+        self.append(&rect);
+
         rect.set_attribute(AId::X, x as f64);
         rect.set_attribute(AId::Y, y as f64);
         rect.set_attribute(AId::Width, 1);
         rect.set_attribute(AId::Height, h as f64);
-        self.append(&rect);
         rect.clone()
     }
 
     fn append_hline(&self, x: u32, y: u32, w: u32) -> Node {
-        let doc = self.document();
-        let rect = doc.create_element(EId::Rect);
+        let rect = self.document().create_element(EId::Rect);
+        self.append(&rect);
+
         rect.set_attribute(AId::X, x as f64);
         rect.set_attribute(AId::Y, y as f64);
         rect.set_attribute(AId::Width, w as f64);
         rect.set_attribute(AId::Height, 1);
-        self.append(&rect);
         rect.clone()
     }
 }
