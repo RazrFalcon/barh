@@ -7,8 +7,7 @@ license = "GPL-2.0"
 description = "A simple horizontal bar chart generator."
 
 [dependencies]
-svgdom = { git = "https://github.com/RazrFalcon/libsvgdom.git" }
-# svgdom = { path = "../svgdom" }
+svgdom = "0.0.2"
 serde_json = "0.8"
 rusttype = "0.2"
 
