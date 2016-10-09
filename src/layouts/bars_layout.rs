@@ -109,7 +109,6 @@ impl<'a> CalcLayout for BarsLayout<'a> {
             let mut v = Vec::new();
             let num_step = max_value / (count - 1) as f64;
             let mut n = 0.0;
-            v.push(0.0);
             for _ in 0..count {
                 v.push(n);
                 n += num_step;
