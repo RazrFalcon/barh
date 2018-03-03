@@ -16,7 +16,7 @@ pub struct FontMetrics<'a> {
 
 impl<'a> FontMetrics<'a> {
     pub fn from_font(family: &'a str, size: u8) -> BarhResult<FontMetrics<'a>> {
-        let f = try!(load_font(family));
+        let f = load_font(family)?;
 
         let scale = rusttype::Scale::uniform(size as f32 * 1.65);
         let vm = f.v_metrics(scale);
@@ -82,9 +82,9 @@ impl<'a> FontMetrics<'a> {
 }
 
 fn load_font<'a>(family: &str) -> BarhResult<rusttype::Font<'a>> {
-    let path = try!(find_font_file(family));
+    let path = find_font_file(family)?;
 
-    let data = try!(load_file(&path));
+    let data = load_file(&path)?;
     let fc = rusttype::FontCollection::from_bytes(data);
 
     Ok(fc.into_font().unwrap())
@@ -99,10 +99,10 @@ pub struct FontData {
 
 impl FontData {
     pub fn system_font() -> BarhResult<FontData> {
-        let family = try!(find_default_font_family());
+        let family = find_default_font_family()?;
         Ok(FontData {
-            size: try!(find_font_size(&family)),
-            path: try!(find_font_file(&family)),
+            size: find_font_size(&family)?,
+            path: find_font_file(&family)?,
             family: family,
         })
     }
@@ -121,8 +121,8 @@ fn find_font_file(family: &str) -> BarhResult<String> {
 }
 
 fn find_font_size(family: &str) -> BarhResult<u8> {
-    let s = try!(run_fc_match(&["--format=%{size}", family]));
-    Ok(try!(s.parse::<u8>()))
+    let s = run_fc_match(&["--format=%{size}", family])?;
+    Ok(s.parse::<u8>()?)
 }
 
 fn find_default_font_family() -> BarhResult<String> {

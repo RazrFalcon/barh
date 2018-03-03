@@ -110,12 +110,12 @@ impl<'a> Config<'a> {
             return Err(Error::ItemsIsNotSet);
         }
 
-        let items = try!(parse_items(items_obj));
+        let items = parse_items(items_obj)?;
 
-        let items_font = try!(parse_font(conf, "items_font", system_font));
+        let items_font = parse_font(conf, "items_font", system_font)?;
 
         let hor_axis = match conf.get("hor_axis") {
-            Some(h) => Some(try!(parse_hor_axis(h))),
+            Some(h) => Some(parse_hor_axis(h)?),
             None => None,
         };
 
