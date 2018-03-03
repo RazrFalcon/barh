@@ -128,7 +128,7 @@ impl<'a> CalcLayout for MainLayout<'a> {
 }
 
 impl<'a> DrawLayout for MainLayout<'a> {
-    fn draw_layout(&self, fm: &FontMetrics, x: u32, y: u32, root: &Node) {
+    fn draw_layout(&self, fm: &FontMetrics, x: u32, y: u32, root: &mut Node) {
         let tx = x + self.vaxis_lay.lay.size.w;
         let mut ty = y;
 

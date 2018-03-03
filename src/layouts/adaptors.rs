@@ -30,59 +30,59 @@ use svgdom::{
 use font::FontMetrics;
 
 pub trait Adaptor {
-    fn append_rect(&self, x: u32, y: u32, w: u32, h: u32) -> Node;
-    fn append_text(&self, text: &str, x: u32, y: u32, fm: &FontMetrics) -> Node;
-    fn append_hline(&self, x: u32, y: u32, w: u32) -> Node;
-    fn append_vline(&self, x: u32, y: u32, h: u32) -> Node;
+    fn append_rect(&mut self, x: u32, y: u32, w: u32, h: u32) -> Node;
+    fn append_text(&mut self, text: &str, x: u32, y: u32, fm: &FontMetrics) -> Node;
+    fn append_hline(&mut self, x: u32, y: u32, w: u32) -> Node;
+    fn append_vline(&mut self, x: u32, y: u32, h: u32) -> Node;
 }
 
 impl Adaptor for Node {
-    fn append_rect(&self, x: u32, y: u32, w: u32, h: u32) -> Node {
-        let rect = self.document().create_element(EId::Rect);
+    fn append_rect(&mut self, x: u32, y: u32, w: u32, h: u32) -> Node {
+        let mut rect = self.document().create_element(EId::Rect);
         self.append(&rect);
 
-        rect.set_attribute(AId::X, x as f64);
-        rect.set_attribute(AId::Y, y as f64);
-        rect.set_attribute(AId::Width, w as f64);
-        rect.set_attribute(AId::Height, h as f64);
-        rect.set_attribute(AId::Fill, "none");
+        rect.set_attribute((AId::X, x as f64));
+        rect.set_attribute((AId::Y, y as f64));
+        rect.set_attribute((AId::Width, w as f64));
+        rect.set_attribute((AId::Height, h as f64));
+        rect.set_attribute((AId::Fill, "none"));
         rect.clone()
     }
 
-    fn append_text(&self, text: &str, x: u32, y: u32, fm: &FontMetrics) -> Node {
-        let doc = self.document();
-        let text_elem = doc.create_element(EId::Text);
+    fn append_text(&mut self, text: &str, x: u32, y: u32, fm: &FontMetrics) -> Node {
+        let mut doc = self.document();
+        let mut text_elem = doc.create_element(EId::Text);
         self.append(&text_elem);
 
         let text_node = doc.create_node(NodeType::Text, text);
         text_elem.append(&text_node);
 
-        text_elem.set_attribute(AId::X, x as f64);
-        text_elem.set_attribute(AId::Y, y as f64);
-        text_elem.set_attribute(AId::FontFamily, fm.family());
-        text_elem.set_attribute(AId::FontSize, fm.height() as f64);
+        text_elem.set_attribute((AId::X, x as f64));
+        text_elem.set_attribute((AId::Y, y as f64));
+        text_elem.set_attribute((AId::FontFamily, fm.family()));
+        text_elem.set_attribute((AId::FontSize, fm.height() as f64));
         text_elem.clone()
     }
 
-    fn append_vline(&self, x: u32, y: u32, h: u32) -> Node {
-        let rect = self.document().create_element(EId::Rect);
+    fn append_vline(&mut self, x: u32, y: u32, h: u32) -> Node {
+        let mut rect = self.document().create_element(EId::Rect);
         self.append(&rect);
 
-        rect.set_attribute(AId::X, x as f64);
-        rect.set_attribute(AId::Y, y as f64);
-        rect.set_attribute(AId::Width, 1);
-        rect.set_attribute(AId::Height, h as f64);
+        rect.set_attribute((AId::X, x as f64));
+        rect.set_attribute((AId::Y, y as f64));
+        rect.set_attribute((AId::Width, 1));
+        rect.set_attribute((AId::Height, h as f64));
         rect.clone()
     }
 
-    fn append_hline(&self, x: u32, y: u32, w: u32) -> Node {
-        let rect = self.document().create_element(EId::Rect);
+    fn append_hline(&mut self, x: u32, y: u32, w: u32) -> Node {
+        let mut rect = self.document().create_element(EId::Rect);
         self.append(&rect);
 
-        rect.set_attribute(AId::X, x as f64);
-        rect.set_attribute(AId::Y, y as f64);
-        rect.set_attribute(AId::Width, w as f64);
-        rect.set_attribute(AId::Height, 1);
+        rect.set_attribute((AId::X, x as f64));
+        rect.set_attribute((AId::Y, y as f64));
+        rect.set_attribute((AId::Width, w as f64));
+        rect.set_attribute((AId::Height, 1));
         rect.clone()
     }
 }

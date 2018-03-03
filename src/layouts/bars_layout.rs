@@ -227,40 +227,40 @@ impl<'a> CalcLayout for BarsLayout<'a> {
 }
 
 impl<'a> DrawLayout for BarsLayout<'a> {
-    fn draw_layout(&self, fm: &FontMetrics, x: u32, y: u32, root: &Node) {
+    fn draw_layout(&self, fm: &FontMetrics, x: u32, y: u32, root: &mut Node) {
         if self.lay.debug {
-            let lay_rect = root.append_rect(x, y, self.lay.size.w, self.lay.size.h);
-            lay_rect.set_attribute(AId::Stroke, "red");
+            let mut lay_rect = root.append_rect(x, y, self.lay.size.w, self.lay.size.h);
+            lay_rect.set_attribute((AId::Stroke, "red"));
         }
 
         let r2 = self.lay.size.into_rect(x as i32, y as i32).adjusted(&self.lay.margins);
         if self.lay.debug {
-            let lay_rect = root.append_rect(r2.x as u32, r2.y as u32, r2.w, r2.h);
-            lay_rect.set_attribute(AId::Stroke, "green");
+            let mut lay_rect = root.append_rect(r2.x as u32, r2.y as u32, r2.w, r2.h);
+            lay_rect.set_attribute((AId::Stroke, "green"));
         }
 
         let tx = fm.height();
 
         for tick in self.ticks.iter() {
             // draw tick line
-            let tick_vl = root.append_vline(x + tick.pos, r2.y as u32, r2.h);
-            tick_vl.set_attribute(AId::Fill, OTHER_TICKS_COLOR);
+            let mut tick_vl = root.append_vline(x + tick.pos, r2.y as u32, r2.h);
+            tick_vl.set_attribute((AId::Fill, OTHER_TICKS_COLOR));
 
             let ty = r2.y as u32 + r2.h + tx - 2;
             let tx = (x + tick.pos - tick.bbox.w / 2) as u32;
-            let text_node1 = root.append_text(&tick.title, tx, ty, fm);
-            text_node1.set_attribute(AId::Fill, TICKS_TEXT_COLOR);
+            let mut text_node1 = root.append_text(&tick.title, tx, ty, fm);
+            text_node1.set_attribute((AId::Fill, TICKS_TEXT_COLOR));
 
             if self.lay.debug {
-                let rect = root.append_rect(tx, ty - tick.bbox.h, tick.bbox.w, tick.bbox.h);
-                rect.set_attribute(AId::Stroke, "red");
+                let mut rect = root.append_rect(tx, ty - tick.bbox.h, tick.bbox.w, tick.bbox.h);
+                rect.set_attribute((AId::Stroke, "red"));
             }
         }
 
         // draw bars
         for (item, bar) in self.config.items.iter().zip(self.bars.iter()) {
-            let rect = root.append_rect(bar.r.x as u32 + x, bar.r.y as u32 + y, bar.r.w, bar.r.h);
-            rect.set_attribute(AId::Fill, item.color);
+            let mut rect = root.append_rect(bar.r.x as u32 + x, bar.r.y as u32 + y, bar.r.w, bar.r.h);
+            rect.set_attribute((AId::Fill, item.color));
 
             let ann_color;
             if bar.r.right() > bar.annotation_bbox.right() {
@@ -272,18 +272,18 @@ impl<'a> DrawLayout for BarsLayout<'a> {
                 let hx = x + bar.r.right();
                 let hy = y + bar.r.y as u32 + self.item_height / 2;
                 let hw = bar.annotation_bbox.x as u32 - bar.r.right() - 2;
-                let hline = root.append_hline(hx, hy, hw);
-                hline.set_attribute(AId::Fill, ANNOTATION_HANDLE_COLOR);
+                let mut hline = root.append_hline(hx, hy, hw);
+                hline.set_attribute((AId::Fill, ANNOTATION_HANDLE_COLOR));
             }
 
-            let text_node = root.append_text(&bar.annotation, x + bar.annotation_bbox.x as u32,
+            let mut text_node = root.append_text(&bar.annotation, x + bar.annotation_bbox.x as u32,
                                              y + bar.annotation_bbox.y as u32, fm);
-            text_node.set_attribute(AId::Fill, ann_color);
+            text_node.set_attribute((AId::Fill, ann_color));
         }
 
         // first tick should be drawn last, so it will be above bars
-        let first_tick_vl = root.append_vline(r2.x as u32, r2.y as u32, r2.h);
-        first_tick_vl.set_attribute(AId::Fill, FIRST_TICK_COLOR);
+        let mut first_tick_vl = root.append_vline(r2.x as u32, r2.y as u32, r2.h);
+        first_tick_vl.set_attribute((AId::Fill, FIRST_TICK_COLOR));
     }
 }
 

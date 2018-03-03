@@ -30,7 +30,7 @@ pub trait CalcLayout {
 }
 
 pub trait DrawLayout {
-    fn draw_layout(&self, font: &FontMetrics, x: u32, y: u32, root: &Node);
+    fn draw_layout(&self, font: &FontMetrics, x: u32, y: u32, root: &mut Node);
 }
 
 #[derive(Debug)]

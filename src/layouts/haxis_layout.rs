@@ -51,17 +51,17 @@ impl<'a> CalcLayout for HAxisLayout<'a> {
 }
 
 impl<'a> DrawLayout for HAxisLayout<'a> {
-    fn draw_layout(&self, fm: &FontMetrics, x: u32, y: u32, root: &Node) {
+    fn draw_layout(&self, fm: &FontMetrics, x: u32, y: u32, root: &mut Node) {
         // should be set by MainLayout
         debug_assert!(self.lay.size.w > 0);
 
         let tx = x + (self.lay.size.w - self.title_width) / 2;
-        let text = root.append_text(self.title, tx, y + fm.height(), fm);
-        text.set_attribute(AId::FontStyle, "italic");
+        let mut text = root.append_text(self.title, tx, y + fm.height(), fm);
+        text.set_attribute((AId::FontStyle, "italic"));
 
         if self.lay.debug {
-            let r = root.append_rect(x, y, self.lay.size.w, self.lay.size.h);
-            r.set_attribute(AId::Stroke, "green");
+            let mut r = root.append_rect(x, y, self.lay.size.w, self.lay.size.h);
+            r.set_attribute((AId::Stroke, "green"));
         }
     }
 }

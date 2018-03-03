@@ -186,9 +186,7 @@ fn parse_items(items: &Vec<Value>) -> Result<Vec<Item>, Error> {
         let value = match obj.get("value") {
             Some(v) => {
                 match *v {
-                    Value::I64(ref t) => *t as f64,
-                    Value::U64(ref t) => *t as f64,
-                    Value::F64(ref t) => *t,
+                    Value::Number(ref t) => t.as_f64().unwrap(),
                     _ => return Err(Error::InvalidValueType("/items/n/value", "Number")),
                 }
             }

@@ -60,7 +60,7 @@ impl<'a> CalcLayout for VAxisLayout<'a> {
 }
 
 impl<'a> DrawLayout for VAxisLayout<'a> {
-    fn draw_layout(&self, fm: &FontMetrics, x: u32, y: u32, root: &Node) {
+    fn draw_layout(&self, fm: &FontMetrics, x: u32, y: u32, root: &mut Node) {
         debug_assert!(self.lay.size.h > 0);
         // ticks list should be set by MainLayout
         debug_assert!(!self.ticks.is_empty());
@@ -72,14 +72,14 @@ impl<'a> DrawLayout for VAxisLayout<'a> {
 
             if self.lay.debug {
                 let dy = y + *tick - fm.height();
-                let r = root.append_rect(tx, dy, bbox.w, fm.full_height());
-                r.set_attribute(AId::Stroke, "red");
+                let mut r = root.append_rect(tx, dy, bbox.w, fm.full_height());
+                r.set_attribute((AId::Stroke, "red"));
             }
         }
 
         if self.lay.debug {
-            let r = root.append_rect(x, y, self.lay.size.w, self.lay.size.h);
-            r.set_attribute(AId::Stroke, "blue");
+            let mut r = root.append_rect(x, y, self.lay.size.w, self.lay.size.h);
+            r.set_attribute((AId::Stroke, "blue"));
         }
     }
 }
