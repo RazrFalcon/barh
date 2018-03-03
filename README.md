@@ -122,4 +122,4 @@ V0.1
 
 ### License
 
-*barh* is licensed under the [GPL-2.0](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html).
+*barh* is licensed under the **MIT**.

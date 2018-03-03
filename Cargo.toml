@@ -3,7 +3,7 @@ name = "barh"
 version = "0.0.1"
 authors = ["Evgeniy Reizner <razrfalcon@gmail.com>"]
 keywords = ["charts", "graph", "bar", "generator", "svg"]
-license = "GPL-2.0"
+license = "MIT"
 description = "A simple horizontal bar chart generator."
 
 [dependencies]
