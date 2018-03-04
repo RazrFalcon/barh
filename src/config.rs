@@ -50,7 +50,7 @@ pub enum Error {
     ItemsIsNotSet,
     ItemNameIsNotSet,
     ItemValueIsNotSet,
-    VelueMustBePositive,
+    ValueMustBePositive,
     CouldNotResolveFontPath,
     InvalidValueType(&'static str, &'static str), // value path, expected type
 }
@@ -172,7 +172,7 @@ fn parse_items(items: &Vec<Value>) -> Result<Vec<Item>, Error> {
         };
 
         if value.is_sign_negative() {
-            return Err(Error::VelueMustBePositive);
+            return Err(Error::ValueMustBePositive);
         }
 
         v.push(Item {
