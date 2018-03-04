@@ -108,7 +108,15 @@ impl<'a> CalcLayout for BarsLayout<'a> {
 
         {
             for n in ticks_value {
-                let text1 = n.to_string() + suffix;
+                let text1 = if let Some(ref ha) = self.config.hor_axis {
+                    if ha.round_tick_values {
+                        n.round().to_string() + suffix
+                    } else {
+                        n.to_string() + suffix
+                    }
+                } else {
+                    n.to_string() + suffix
+                };
                 let bbox1 = fm.text_bbox(&text1);
 
                 self.ticks.push(Tick {

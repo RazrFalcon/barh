@@ -21,6 +21,7 @@ pub struct HorAxis<'a> {
     pub max_value: Option<f64>,
     pub ticks: Option<Vec<f64>>,
     pub width: Option<u32>,
+    pub round_tick_values: bool,
 }
 
 #[cfg(test)]
@@ -32,6 +33,7 @@ impl<'a> Default for HorAxis<'a> {
             max_value: None,
             ticks: None,
             width: None,
+            round_tick_values: false,
         }
     }
 }
@@ -262,6 +264,7 @@ fn parse_hor_axis(value: &Value) -> Result<HorAxis, Error> {
         max_value: get_num!(ha, "max_value"),
         ticks: ticks,
         width: width,
+        round_tick_values: *value_option!(ha, "round_tick_values", Bool).unwrap_or(&false)
     })
 }
 
